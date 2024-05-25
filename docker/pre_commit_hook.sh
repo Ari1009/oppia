@@ -94,7 +94,7 @@ if [ "$is_container_running" != "0" ]; then
     # Start containers and run pre-commit hook
     make start-devserver
 fi
-
+git config --global --add safe.directory /app/oppia
 # Run hook in container
 CMD="$DOCKER_EXEC_COMMAND python3 ./$PYTHON_PRE_COMMIT_SYMLINK $@"
 echo "Running $CMD"
